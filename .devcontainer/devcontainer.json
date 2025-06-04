@@ -1,0 +1,15 @@
+{
+  "name": "NetTracker",
+  "customizations": {},
+  "dockerComposeFile": "docker-compose.yml",
+  "forwardPorts": [5432, 6379],
+  "portsAttributes": {
+    "5432": { "label": "Postgres" },
+    "6379": { "label": "Redis" },
+    "9229": { "label": "NestJS Debugger" }
+  },
+  "postCreateCommand": "bash .devcontainer/postCreate.sh",
+  "postStartCommand": "bash .devcontainer/postStart.sh",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+}
